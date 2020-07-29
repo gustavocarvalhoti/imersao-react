@@ -1,4 +1,4 @@
-# Treinamento Imersao React Alura
+# Treinamento Imersão React Alura
 
 ## Install
 ```
