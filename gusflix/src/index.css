@@ -23,3 +23,10 @@ html, body {
 a {
     color: inherit;
 }
+
+#root {
+    /*Desconta o bodyPaddingTop*/
+    min-height: calc(100vh - var(--bodyPaddingTop));
+    display: flex;
+    flex-direction: column;
+}

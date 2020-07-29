@@ -4,6 +4,8 @@
 ```
 npx create-react-app gusflix    <- Iniciar um projeto
 npm i styled-components         <- Ex: gusflix/src/components/Button/index.js, o IntelliJ tem um plugin que ajuda
+npm i react-router-dom          <- Rotas
+npm i react-slick               <- Carousel easy
 ```
 
 ## Start
