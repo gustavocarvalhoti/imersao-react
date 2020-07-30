@@ -1,101 +1,85 @@
 {
   "categorias": [
     {
-      "titulo": "Front End",
+      "titulo": "Mundo Canibal",
       "link": "https://www.alura.com.br/formacao-front-end",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
+        "text": "Humor da realiade",
         "url": "https://www.alura.com.br/cursos-online-front-end"
       },
       "videos": [
         {
-          "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "titulo": "Mundo Canibal - Avaiana de pau",
+          "url": "https://www.youtube.com/watch?v=1LKf06lminQ"
         },
         {
-          "titulo": "SEO com React",
-          "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+          "titulo": "Pastor Metralhadora - Videogame Coisa do Capeta",
+          "url": "https://www.youtube.com/watch?v=1Ua1XvVi4Ig"
         },
         {
-          "titulo": "Componentização com VanillaJS #AluraMais",
-          "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+          "titulo": "O Gatinho Rikuku",
+          "url": "https://www.youtube.com/watch?v=tYpCzu57IUU"
         },
         {
-          "titulo": "Pare de chutar e aprenda a display: inline #01",
-          "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+          "titulo": "Biatômico Fontora com Chuq Nóia",
+          "url": "https://www.youtube.com/watch?v=SYU5FjLlHew"
         },
         {
-          "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-          "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+          "titulo": "O Natal do Aí Para!",
+          "url": "https://www.youtube.com/watch?v=xiOTCf19KWY"
         },
         {
-          "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
-        },
-        {
-          "titulo": "Novidades do Angular v9",
-          "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
-        },
-        {
-          "titulo": "Base para aprender os frameworks",
-          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
-      ]
-    },
-    {
-      "titulo": "Back End",
-      "cor": "#00C86F",
-      "link_extra": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
-      },
-      "videos": [
-        {
-          "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
-        },
-        {
-          "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-          "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
-        },
-        {
-          "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
-          "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
-        },
-        {
-          "titulo": "API: Dicionário do Programador",
-          "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
-        }, 
-        {
-          "titulo": "Usando Git Direito",
-          "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+          "titulo": "Discovery Cotoco Channel",
+          "url": "https://www.youtube.com/watch?v=2WO-8BPflx8"
         }
       ]
     },
     {
-      "titulo": "Data Science e Inteligência Artificial",
+      "titulo": "Porta dos fundos",
+      "cor": "#00C86F",
+      "link_extra": {
+        "text": "Humor sem censura",
+        "url": "https://www.alura.com.br/cursos-online-programacao"
+      },
+      "videos": [
+        {
+          "titulo": "TRINTAPORCENTOLÂNDIA",
+          "url": "https://www.youtube.com/watch?v=lKuAqzQw_0k"
+        },
+        {
+          "titulo": "TESTE DE COVID",
+          "url": "https://www.youtube.com/watch?v=UoS-WsIu65g"
+        },
+        {
+          "titulo": "MIOJERIA GOURMET",
+          "url": "https://www.youtube.com/watch?v=Rt-QivzoYRA"
+        }
+      ]
+    },
+    {
+      "titulo": "Ei Nerd",
       "cor": "#9cd33b",
       "link_extra": {
-        "text": "Cursos de Data Science na Alura",
+        "text": "Melhor Canal do Youtube",
         "url": "https://www.alura.com.br/formacao-data-science"
       },
       "videos": [
         {
-          "titulo": "Teste de Turing",
-          "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+          "titulo": "HULK FEZ UMA GRANDE BESTEIRA EM VINGADORES ULTIMATO",
+          "url": "https://www.youtube.com/watch?v=QQNwtj--OT0"
         },
         {
-          "titulo": "O que é Data Science?",
-          "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+          "titulo": "7 PERGUNTAS QUE A FASE 3 DA MARVEL NÃO RESPONDEU",
+          "url": "https://www.youtube.com/watch?v=HlREsVPMcHQ"
         },
         {
-          "titulo": "Melhor forma de aprender Python",
-          "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+          "titulo": "MTHE ZOEIRA NEVER ENDS: ASSISTI SHARKNADO",
+          "url": "https://www.youtube.com/watch?v=xYQ61MzHy4k"
         },
         {
-          "titulo": "Como ingressar no mercado de Data Science?",
-          "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+          "titulo": "FINAIS INESPERADOS, TWITTER! #REACT",
+          "url": "https://www.youtube.com/watch?v=YbYnfSy9Iqs"
         }
       ]
     },
