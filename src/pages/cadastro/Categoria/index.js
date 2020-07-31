@@ -88,7 +88,7 @@ function CadastroCategoria() {
 
     return (
         <PageDefault>
-            <h1>Cadastro de Categoria:</h1>
+            <h1>Cadastro de Categoria: </h1>
             <form onSubmit={handleAddCategory}>
                 <FormField
                     name='name'
