@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import PageDefault from "../../../components/PageDefault";
+import React, {useEffect, useState} from 'react';
 import FormField from "../../../components/FormField";
+import PageDefault from "../../../components/PageDefault";
 
 function CadastroCategoria() {
 
@@ -10,6 +10,8 @@ function CadastroCategoria() {
         description: '',
         color: '',
     };
+
+    const URL = 'http://localhost:8080';
 
     /* HANDLE */
     function handleChangeCategory(value) {
@@ -29,8 +31,7 @@ function CadastroCategoria() {
             return;
         }
 
-        const newLIst = [...categoryList, category.name];
-        setCategoryList(newLIst);
+        setCategoryList([...categoryList, category]);
         setCategory(categoryEmpty);
     }
 
@@ -46,13 +47,45 @@ function CadastroCategoria() {
     const [category, setCategory] = useState(categoryEmpty);
     const [categoryList, setCategoryList] = useState([]);
 
+    /* USE EFECT - Quando atualizar uma coisa faz isso
+    * [] = Uma unica vez
+    * [category.name] = Quando essa variavel mudar
+    * */
+    useEffect(() => {
+        fetch(`${URL}/categorias`)
+            .then(async (response) => await response.json())
+            .then((response) => {
+                console.log(response);
+                setCategoryList([
+                    ...categoryList,
+                    response
+                ]);
+            });
+
+        /*
+        setTimeout(() => {
+            setCategoryList([
+                ...categoryList,
+                {
+                    "id": 1,
+                    name: 'Gustavo',
+                    description: 'teste',
+                    color: '#cdb1ff',
+                },
+                {
+                    "id": 2,
+                    name: 'Michelle',
+                    description: 'teste',
+                    color: '#cdb1ff',
+                },
+            ]);
+        }, 2 * 1000);
+        */
+    }, [])
+
     return (
         <PageDefault>
-            <h1>Cadastro de Categoria: {
-                category.name + ' ' +
-                category.description + ' ' +
-                category.color
-            }</h1>
+            <h1>Cadastro de Categoria:</h1>
             <form onSubmit={handleAddCategory}>
                 <FormField
                     name='name'
@@ -75,10 +108,16 @@ function CadastroCategoria() {
                     typeInput='color'
                 />
                 <button>Cadastrar</button>
+                {/* Monstra quando não tem nada na lista */}
+                {
+                    categoryList.length === 0 && (
+                        <div>Loading...</div>
+                    )
+                }
                 <ul>
                     {
                         categoryList.map((category, index) => {
-                            return <li key={`${category}${index}`}>{category}</li>
+                            return <li key={`${category.name}${index}`}>{category.name}</li>
                         })
                     }
                 </ul>
