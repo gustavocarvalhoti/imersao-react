@@ -11,7 +11,8 @@ function CadastroCategoria() {
         color: '',
     };
 
-    const URL = 'http://localhost:8080';
+    //const URL = 'http://localhost:8080';
+    const URL = 'https://gusflix.herokuapp.com';
 
     /* HANDLE */
     function handleChangeCategory(value) {
@@ -56,10 +57,10 @@ function CadastroCategoria() {
             .then(async (response) => await response.json())
             .then((response) => {
                 console.log(response);
-                setCategoryList([
+                setCategoryList(
                     ...categoryList,
                     response
-                ]);
+                );
             });
 
         /*
