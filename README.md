@@ -31,6 +31,9 @@ Live Share, compartilhando a tela
 Deploy React
 https://vercel.com/
 
+Deploy Backend
+https://dashboard.heroku.com/apps
+
 Boas práticas JavaSvript
 https://github.com/airbnb/javascript
 ```

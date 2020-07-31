@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Button from "../../../components/Button";
 import FormField from "../../../components/FormField";
 import PageDefault from "../../../components/PageDefault";
 
@@ -11,8 +12,9 @@ function CadastroCategoria() {
         color: '',
     };
 
-    //const URL = 'http://localhost:8080';
-    const URL = 'https://gusflix.herokuapp.com';
+    const URL_BACKEND = window.location.hostname.includes('localhost')
+        ? 'http://localhost:8080'
+        : 'https://gusflix.herokuapp.com';
 
     /* HANDLE */
     function handleChangeCategory(value) {
@@ -53,14 +55,14 @@ function CadastroCategoria() {
     * [category.name] = Quando essa variavel mudar
     * */
     useEffect(() => {
-        fetch(`${URL}/categorias`)
+        fetch(`${URL_BACKEND}/categorias`)
             .then(async (response) => await response.json())
             .then((response) => {
-                console.log(response);
-                setCategoryList(
+                const category = [
                     ...categoryList,
-                    response
-                );
+                    ...response
+                ];
+                setCategoryList(category);
             });
 
         /*
@@ -108,7 +110,7 @@ function CadastroCategoria() {
                     onChange={handleChangeCategory}
                     typeInput='color'
                 />
-                <button>Cadastrar</button>
+                <Button>Cadastrar</Button>
                 {/* Monstra quando não tem nada na lista */}
                 {
                     categoryList.length === 0 && (

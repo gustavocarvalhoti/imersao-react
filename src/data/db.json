@@ -2,15 +2,15 @@
   "categorias": [
     {
       "id": 1,
-      "name": "Gustavo",
-      "description": "teste",
+      "name": "Action",
+      "description": "Filems de luta",
       "color": "#cdb1ff"
     },
     {
       "id": 2,
-      "name": "Michelle",
-      "description": "teste",
-      "color": "#cdb1ff"
+      "name": "Comedy",
+      "description": "Filmes Felizes",
+      "color": "#cdb1fg"
     }
   ]
 }
