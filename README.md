@@ -36,4 +36,7 @@ https://dashboard.heroku.com/apps
 
 Boas práticas JavaSvript
 https://github.com/airbnb/javascript
+
+Servidor json-server
+https://github.com/typicode/json-server
 ```

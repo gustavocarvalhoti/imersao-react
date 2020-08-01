@@ -2,125 +2,89 @@ import React, {useEffect, useState} from 'react';
 import Button from "../../../components/Button";
 import FormField from "../../../components/FormField";
 import PageDefault from "../../../components/PageDefault";
+import useForm from "../../../hooks/useForm";
+import categoriasRepository from "../../../repository/categorias";
 
 function CadastroCategoria() {
 
     /* CONSTANTS */
-    const categoryEmpty = {
-        name: '',
-        description: '',
-        color: '',
+    const initial = {
+        titulo: '',
+        descricao: '',
+        cor: '',
     };
 
-    const URL_BACKEND = window.location.hostname.includes('localhost')
-        ? 'http://localhost:8080'
-        : 'https://gusflix.herokuapp.com';
+    /*USE CUSTOM HOOKS*/
+    const {formData, handleChange, clearForm} = useForm(initial)
+
+    /* STATE */
+    const [valueList, setValueList] = useState([]);
 
     /* HANDLE */
-    function handleChangeCategory(value) {
-        /* Descobre o name - value.target.getAttribute('name') */
-        setValue(value.target.getAttribute('name'), value.target.value);
-    }
-
     function handleAddCategory(event) {
         event.preventDefault();
-        if (!category.name || category.name.trim() === '') {
+        if (!formData.titulo || formData.titulo.trim() === '') {
             alert('Valor inválido.');
             return;
         }
 
-        if (categoryList.includes(category.name)) {
+        if (valueList.includes(formData.titulo)) {
             alert('Esta categoria já existe, selecioe outra.');
             return;
         }
 
-        setCategoryList([...categoryList, category]);
-        setCategory(categoryEmpty);
+        setValueList([...valueList, formData]);
+        clearForm();
     }
-
-    /* FUNCTION */
-    function setValue(key, value) {
-        setCategory({
-            ...category,
-            [key]: value // nome: valor
-        });
-    }
-
-    /* STATE */
-    const [category, setCategory] = useState(categoryEmpty);
-    const [categoryList, setCategoryList] = useState([]);
 
     /* USE EFECT - Quando atualizar uma coisa faz isso
     * [] = Uma unica vez
-    * [category.name] = Quando essa variavel mudar
+    * [value.titulo] = Quando essa variavel mudar
     * */
     useEffect(() => {
-        fetch(`${URL_BACKEND}/categorias`)
-            .then(async (response) => await response.json())
-            .then((response) => {
-                const category = [
-                    ...categoryList,
-                    ...response
-                ];
-                setCategoryList(category);
-            });
-
-        /*
-        setTimeout(() => {
-            setCategoryList([
-                ...categoryList,
-                {
-                    "id": 1,
-                    name: 'Gustavo',
-                    description: 'teste',
-                    color: '#cdb1ff',
-                },
-                {
-                    "id": 2,
-                    name: 'Michelle',
-                    description: 'teste',
-                    color: '#cdb1ff',
-                },
-            ]);
-        }, 2 * 1000);
-        */
+        categoriasRepository
+            .getAll()
+            .then((result => {
+                setValueList([...valueList, result]);
+            }));
+        // eslint-disable-next-line
     }, [])
 
     return (
         <PageDefault>
             <h1>Cadastro de Categoria: </h1>
-            <form onSubmit={handleAddCategory}>
+            <form>
                 <FormField
-                    name='name'
+                    name='titulo'
                     label='Nome'
-                    value={category.name}
-                    onChange={handleChangeCategory}
+                    value={formData.titulo}
+                    onChange={handleChange}
                 />
                 <FormField
-                    name='description'
+                    name='descricao'
                     label='Descrição'
-                    value={category.description}
-                    onChange={handleChangeCategory}
+                    value={formData.descricao}
+                    onChange={handleChange}
                     type='textarea'
                 />
                 <FormField
-                    name='color'
+                    name='cor'
                     label='Color'
-                    value={category.color}
-                    onChange={handleChangeCategory}
+                    value={formData.cor}
+                    onChange={handleChange}
                     typeInput='color'
                 />
-                <Button>Cadastrar</Button>
+                <Button onClick={handleAddCategory}>Cadastrar</Button>
                 {/* Monstra quando não tem nada na lista */}
                 {
-                    categoryList.length === 0 && (
+                    valueList.length === 0 && (
                         <div>Loading...</div>
                     )
                 }
                 <ul>
                     {
-                        categoryList.map((category, index) => {
-                            return <li key={`${category.name}${index}`}>{category.name}</li>
+                        valueList.map((value, index) => {
+                            return <li key={`${value.titulo}${index}`}>{value.titulo}</li>
                         })
                     }
                 </ul>
